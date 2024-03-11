@@ -47,6 +47,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	defer file.Close()
 
 	// create chunk directory if not exist
 	if _, err := os.Stat(chunkDir); os.IsNotExist(err) {
